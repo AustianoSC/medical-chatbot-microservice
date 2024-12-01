@@ -1,0 +1,4 @@
+MODEL_CONFIG:
+  MODEL_NAME: "AustianoTrojan/llama-3-8b-chat-doctor"
+  MAX_LENGTH: 512
+  TEMPERATURE: 0.7
