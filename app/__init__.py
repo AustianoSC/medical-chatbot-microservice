@@ -1,4 +1,4 @@
-from .main import llm_app
+from .main import app
 from .llm_service import LLMService
 
-__all__ = ["llm_app", "LLMService"]
+__all__ = ["app", "LLMService"]
