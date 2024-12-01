@@ -1,3 +1,4 @@
+import torch
 import huggingface_hub as hf_hub
 
 from langchain.llms import HuggingFacePipeline
@@ -16,7 +17,8 @@ class LLMService:
             model=model,
             tokenizer=tokenizer,
             max_length=settings.MODEL_CONFIG.MAX_LENGTH,
-            temperature=settings.MODEL_CONFIG.TEMPERATURE
+            temperature=settings.MODEL_CONFIG.TEMPERATURE,
+            device="cuda" if torch.cuda.is_available() else "cpu"
         )
         
         self.llm = HuggingFacePipeline(pipeline=pipe)
